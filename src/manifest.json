@@ -1,0 +1,16 @@
+{
+  "short_name": "weather",
+  "name": "weather",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "/?utm_source=launcher",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1a8cff",
+  "theme_color": "#1a8cff"
+}

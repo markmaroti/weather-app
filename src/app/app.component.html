@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<p class="error-msg" *ngIf="responseError$ | async">
+  {{ (responseError$ | async)?.message }}
+</p>
+
+<div class="coords-inputs" *ngIf="responseError$ | async">
+  <mat-form-field>
+    <mat-label>Latitude</mat-label>
+    <input matInput type="number" [formControl]="latitudeControl" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Longitude</mat-label>
+    <input matInput type="number" [formControl]="longitudeControl" />
+  </mat-form-field>
+  <button mat-flat-button color="primary" (click)="setCoords()">Send</button>
+</div>
+
+<mat-spinner *ngIf="loading$ | async"></mat-spinner>
+
+<div class="wrapper">
+  <mat-card class="card" *ngFor="let item of parsedData$ | async">
+    <mat-card-header>
+      <mat-card-title>{{ item.date }}</mat-card-title>
+      <mat-card-subtitle>{{ item.weather }} </mat-card-subtitle>
+    </mat-card-header>
+    <img class="weather-icon" src="../assets/svgs/day.svg" alt="weather icon" />
+    <mat-card-content>
+      <span class="temp-min">min: {{ item.temp2m.min }}</span> <br />
+      <span class="temp-max">max: {{ item.temp2m.max }}</span>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-footer>
+      {{ item.wind }}
+    </mat-card-footer>
+  </mat-card>
+</div>

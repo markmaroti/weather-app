@@ -1,0 +1,65 @@
+@import "app-theme.scss";
+
+a {
+  cursor: pointer;
+}
+
+.error-msg {
+  color: red;
+}
+
+.coords-inputs {
+  mat-form-field {
+    margin-right: 4px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  overflow: auto;
+  width: 100%;
+
+  .card {
+    margin: 10px;
+    min-width: 200px;
+  }
+
+  #clear {
+    width: 150px;
+    height: 150px;
+  }
+
+  #wind-turbine {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+  }
+
+  .weather-icon {
+    width: 100%;
+  }
+
+  .temp-min {
+    color: blue;
+  }
+
+  .temp-max {
+    color: red;
+  }
+}
+
+#clear-group {
+  transition: all 1s ease;
+  transform-origin: center;
+  animation: mercury-group 4s linear infinite;
+}
+
+@keyframes mercury-group {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(45deg);
+  }
+}

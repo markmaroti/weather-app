@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>weather</title>
+    <meta name="application-name" content="weather" />
+    <meta name="description" content="weather by Mark" />
+    <meta charset="utf-8" />
+    <meta lang="en-US" />
+    <base href="/" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+    <style>
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      noscript,
+      #spinner {
+        background: white linear-gradient(-30deg, #00204060, #00204020);
+        color: #000000a0;
+        font: 900 4vh Arial, Helvetica, sans-serif;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        padding: 0 6vw;
+      }
+      noscript {
+        display: flex;
+      }
+      noscript div,
+      #spinner div {
+        animation: 3s fadeIn forwards;
+        visibility: hidden;
+      }
+      #spinner div {
+        animation-delay: 2s;
+      }
+      @media (prefers-color-scheme: dark) {
+        noscript,
+        #spinner {
+          background: black linear-gradient(-30deg, #002040e0, #00204080);
+          color: #ffffffa0;
+        }
+      }
+      #ie-support {
+        font-size: 16px;
+        font-weight: normal;
+        margin-top: 24px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+    </style>
+    <link rel="icon" type="image/x-icon" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+
+  <body>
+    <app-root>
+      <div id="spinner" hidden>
+        <div>Loading...</div>
+        <div id="ie-support"></div>
+      </div>
+    </app-root>
+    <noscript>
+      <div>Javascript must be enabled to use this application.</div>
+    </noscript>
+    <script>
+      const spinner = document.getElementById("spinner");
+      spinner.removeAttribute("hidden");
+      spinner.style.display = "flex";
+      spinner.style.flexDirection = 'column';
+      if (navigator.userAgent.match(/trident/i)) {
+        document.getElementById('ie-support').innerHTML =
+          'For a full experience, please use any recent browser (Chrome, Firefox, Edge, or Safari). We do not support Internet Explorer 11 and older.';
+      }
+    </script>
+  </body>
+</html>

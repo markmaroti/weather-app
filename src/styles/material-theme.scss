@@ -1,0 +1,138 @@
+@use '@angular/material' as mat;
+
+@import '../../node_modules/modern-css-reset/dist/reset.css';
+@import 'app-theme.scss';
+@import 'fonts.scss';
+
+@include mat.core();
+
+$contrast-black: rgba($black, 0.87);
+$contrast-white: rgba($white, 0.92);
+
+$app-primary: (
+  50: $theme-color-1,
+  100: $theme-color-2,
+  200: $theme-color-3,
+  300: $theme-color-4,
+  400: $theme-color-5,
+  500: $theme-color-6,
+  600: $theme-color-7,
+  700: $theme-color-8,
+  800: $theme-color-9,
+  900: $theme-color-10,
+  A100: $theme-light,
+  A200: $theme-default,
+  A400: $theme-hover,
+  A700: $theme-pressed,
+  contrast: (
+    50: $contrast-black,
+    100: $contrast-black,
+    200: $contrast-black,
+    300: $contrast-black,
+    400: $contrast-white,
+    500: $contrast-white,
+    600: $contrast-white,
+    700: $contrast-white,
+    800: $contrast-white,
+    900: $contrast-white,
+    A100: $contrast-black,
+    A200: $contrast-white,
+    A400: $contrast-white,
+    A700: $contrast-white,
+  ),
+);
+
+$app-accent: (
+  50: $accent-color-1,
+  100: $accent-color-2,
+  200: $accent-color-3,
+  300: $accent-color-4,
+  400: $accent-color-5,
+  500: $accent-color-6,
+  600: $accent-color-7,
+  700: $accent-color-8,
+  800: $accent-color-9,
+  900: $accent-color-10,
+  A100: $accent-light,
+  A200: $accent-default,
+  A400: $accent-hover,
+  A700: $accent-pressed,
+  contrast: (
+    50: $contrast-black,
+    100: $contrast-black,
+    200: $contrast-black,
+    300: $contrast-black,
+    400: $contrast-black,
+    500: $contrast-black,
+    600: $contrast-black,
+    700: $contrast-white,
+    800: $contrast-white,
+    900: $contrast-white,
+    A100: $contrast-black,
+    A200: $contrast-black,
+    A400: $contrast-white,
+    A700: $contrast-white,
+  ),
+);
+
+$app-warn: (
+  50: $warn-color-1,
+  100: $warn-color-2,
+  200: $warn-color-3,
+  300: $warn-color-4,
+  400: $warn-color-5,
+  500: $warn-color-6,
+  600: $warn-color-7,
+  700: $warn-color-8,
+  800: $warn-color-9,
+  900: $warn-color-10,
+  A100: $warn-light,
+  A200: $warn-default,
+  A400: $warn-hover,
+  A700: $warn-pressed,
+  contrast: (
+    50: $contrast-black,
+    100: $contrast-black,
+    200: $contrast-black,
+    300: $contrast-black,
+    400: $contrast-black,
+    500: $contrast-white,
+    600: $contrast-white,
+    700: $contrast-white,
+    800: $contrast-white,
+    900: $contrast-white,
+    A100: $contrast-black,
+    A200: $contrast-white,
+    A400: $contrast-white,
+    A700: $contrast-white,
+  ),
+);
+
+$palette-primary: mat.define-palette($app-primary, 500);
+$palette-accent: mat.define-palette($app-accent, A200, A100, A400);
+$palette-warn: mat.define-palette($app-warn, A200, A100, A400);
+
+$app-typography: mat.define-typography-config(
+  $font-family: $theme-font,
+);
+
+$app-theme: mat.define-light-theme((
+ color: (
+   primary: $palette-primary,
+   accent: $palette-accent,
+   warn: $palette-warn,
+ ),
+ typography: $app-typography,
+));
+
+@include mat.all-component-themes($app-theme);
+
+.cdk-overlay-container {
+  z-index: 2000;
+}
+
+html {
+  color: $font-color;
+  font-size: 1rem;
+  font-family: $theme-font;
+}
