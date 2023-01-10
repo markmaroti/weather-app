@@ -1,4 +1,4 @@
-# Weather App Project
+# Weather App Project By Mark
 
 Used API: [7timer.info](https://www.7timer.info/)
 

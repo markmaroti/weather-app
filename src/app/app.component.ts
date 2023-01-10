@@ -9,6 +9,8 @@ import {
   getWindStringByIndex,
   initGeolocationPositionError,
   initLocation,
+  mapIconByResponse,
+  WeatherIconResponse,
 } from "./app.model";
 
 @Component({
@@ -49,13 +51,16 @@ export class AppComponent {
   public parsedData$ = this.response$.pipe(
     filter((response) => !!response),
     map((response: any) => response.dataseries),
-    map((day) =>
-      day.map((i: any) => ({
-        ...i,
-        date: `${i.date.toString().slice(0, 4)}-${i.date
+    map((days) =>
+      days.map((day: any) => ({
+        ...day,
+        date: `${day.date.toString().slice(0, 4)}-${day.date
           .toString()
-          .slice(4, 6)}-${i.date.toString().slice(6, 8)}`,
-        wind: getWindStringByIndex[i.wind10m_max],
+          .slice(4, 6)}-${day.date.toString().slice(6, 8)}`,
+        wind: getWindStringByIndex[day.wind10m_max],
+        icon: mapIconByResponse[
+          day.weather as keyof typeof WeatherIconResponse
+        ],
       }))
     ),
     tap(() => this.loading$.next(false))

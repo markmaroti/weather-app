@@ -14,6 +14,28 @@ export const getWindStringByIndex = [
   "Over 55.9m/s (hurricane+)",
 ];
 
+export const mapIconByResponse = {
+  clear: "day",
+  pcloudy: "cloudy-day-1",
+  cloudy: "cloudy-day-3",
+  mcloudy: "cloudy-day-2",
+  rain: "rainy-1",
+  lightrain: "rainy-1",
+  snow: "snowy-1",
+  ts: "thunder",
+  tsrain: "rainy-7",
+};
+
+export enum WeatherIconResponse {
+  clear,
+  pcloudy,
+  cloudy,
+  rain,
+  snow,
+  ts,
+  tsrain,
+}
+
 export interface Coordinates {
   latitude: number;
   longitude: number;
