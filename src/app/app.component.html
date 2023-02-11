@@ -23,14 +23,15 @@
   <mat-card class="card" *ngFor="let item of parsedData$ | async">
     <mat-card-header>
       <mat-card-title>{{ item.date }}</mat-card-title>
-      <mat-card-subtitle>{{ item.weather }} </mat-card-subtitle>
+      <mat-card-subtitle>
+        {{ item.weather }} - {{ item.weatherHint }}
+      </mat-card-subtitle>
     </mat-card-header>
     <img
       class="weather-icon"
       [src]="'../assets/svgs/' + item.icon + '.svg'"
       alt="weather icon"
     />
-
     <mat-card-content>
       <span class="temp-min">min: {{ item.temp2m.min }}</span> <br />
       <span class="temp-max">max: {{ item.temp2m.max }}</span>

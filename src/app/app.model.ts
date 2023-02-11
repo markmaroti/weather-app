@@ -17,16 +17,30 @@ export const getWindStringByIndex = [
 export const mapIconByResponse = {
   clear: "day",
   pcloudy: "cloudy-day-1",
-  cloudy: "cloudy-day-3",
   mcloudy: "cloudy-day-2",
-  rain: "rainy-1",
+  cloudy: "cloudy-day-3",
+  rain: "rainy-6",
   lightrain: "rainy-1",
   snow: "snowy-1",
   ts: "thunder",
-  tsrain: "rainy-7",
+  tsrain: "tsrain",
 };
 
-export enum WeatherIconResponse {
+export const mapWeatherByResponse = {
+  clear: "Clear: Total cloud cover less than 20%",
+  pcloudy: "PCloudy: Total cloud cover between 20%-60%",
+  mcloudy: "MCloudy: Total cloud cover between 60%-80%",
+  cloudy: "Cloudy: Total cloud cover over over 80%",
+  lightrain:
+    "LightRain: Precipitation rate less than 4mm/hr with total cloud cover more than 80%",
+  rain: "Rainy: Precipitation rate over 4mm/hr",
+  snow: "Snowy: Precipitation rate over 4mm/hr",
+  ts: "Thunder: Lifted Index less than -5 with precipitation rate below 4mm/hr",
+  tsrain:
+    "ThunderRain: Lifted Index less than -5 with precipitation rate over 4mm/hr",
+};
+
+export enum WeatherIconResponse { // ts: alternatíva enum helyett!
   clear,
   pcloudy,
   cloudy,

@@ -10,6 +10,7 @@ import {
   initGeolocationPositionError,
   initLocation,
   mapIconByResponse,
+  mapWeatherByResponse,
   WeatherIconResponse,
 } from "./app.model";
 
@@ -59,6 +60,9 @@ export class AppComponent {
           .slice(4, 6)}-${day.date.toString().slice(6, 8)}`,
         wind: getWindStringByIndex[day.wind10m_max],
         icon: mapIconByResponse[
+          day.weather as keyof typeof WeatherIconResponse
+        ],
+        weather: mapWeatherByResponse[
           day.weather as keyof typeof WeatherIconResponse
         ],
       }))
