@@ -40,15 +40,18 @@ export const mapWeatherByResponse = {
     "ThunderRain: Lifted Index less than -5 with precipitation rate over 4mm/hr",
 };
 
-export enum WeatherIconResponse { // ts: alternatíva enum helyett!
-  clear,
-  pcloudy,
-  cloudy,
-  rain,
-  snow,
-  ts,
-  tsrain,
-}
+export const WEATHER_TYPES = {
+  CLEAR: "clear",
+  PCLOUDY: "pcloudy",
+  MCLOUDY: "mcloudy",
+  CLOUDY: "cloudy",
+  RAIN: "rain",
+  LIGHTRAIN: "lightrain",
+  SNOW: "snow",
+  TS: "ts",
+  TSRAIN: "tsrain",
+} as const;
+export type WEATHER_TYPES = typeof WEATHER_TYPES[keyof typeof WEATHER_TYPES];
 
 export interface Coordinates {
   latitude: number;

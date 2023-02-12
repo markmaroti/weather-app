@@ -11,7 +11,7 @@ import {
   initLocation,
   mapIconByResponse,
   mapWeatherByResponse,
-  WeatherIconResponse,
+  WEATHER_TYPES,
 } from "./app.model";
 
 @Component({
@@ -59,12 +59,8 @@ export class AppComponent {
           .toString()
           .slice(4, 6)}-${day.date.toString().slice(6, 8)}`,
         wind: getWindStringByIndex[day.wind10m_max],
-        icon: mapIconByResponse[
-          day.weather as keyof typeof WeatherIconResponse
-        ],
-        weather: mapWeatherByResponse[
-          day.weather as keyof typeof WeatherIconResponse
-        ],
+        icon: mapIconByResponse[day.weather as WEATHER_TYPES],
+        weather: mapWeatherByResponse[day.weather as WEATHER_TYPES],
       }))
     ),
     tap(() => this.loading$.next(false))
