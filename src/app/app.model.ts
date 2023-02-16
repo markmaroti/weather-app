@@ -27,17 +27,28 @@ export const mapIconByResponse = {
 };
 
 export const mapWeatherByResponse = {
-  clear: "Clear: Total cloud cover less than 20%",
-  pcloudy: "PCloudy: Total cloud cover between 20%-60%",
-  mcloudy: "MCloudy: Total cloud cover between 60%-80%",
-  cloudy: "Cloudy: Total cloud cover over over 80%",
+  clear: "Clear",
+  pcloudy: "PCloudy",
+  mcloudy: "MCloudy",
+  cloudy: "Cloudy",
+  lightrain: "LightRain",
+  rain: "Rainy",
+  snow: "Snowy",
+  ts: "Thunder",
+  tsrain: "ThunderRain",
+};
+
+export const mapWeatherDetailByResponse = {
+  clear: "Total cloud cover less than 20%",
+  pcloudy: "Total cloud cover between 20%-60%",
+  mcloudy: "Total cloud cover between 60%-80%",
+  cloudy: "Total cloud cover over over 80%",
   lightrain:
-    "LightRain: Precipitation rate less than 4mm/hr with total cloud cover more than 80%",
-  rain: "Rainy: Precipitation rate over 4mm/hr",
-  snow: "Snowy: Precipitation rate over 4mm/hr",
-  ts: "Thunder: Lifted Index less than -5 with precipitation rate below 4mm/hr",
-  tsrain:
-    "ThunderRain: Lifted Index less than -5 with precipitation rate over 4mm/hr",
+    "Precipitation rate less than 4mm/hr with total cloud cover more than 80%",
+  rain: "Precipitation rate over 4mm/hr",
+  snow: "Precipitation rate over 4mm/hr",
+  ts: "Lifted Index less than -5 with precipitation rate below 4mm/hr",
+  tsrain: "Lifted Index less than -5 with precipitation rate over 4mm/hr",
 };
 
 export const WEATHER_TYPES = {

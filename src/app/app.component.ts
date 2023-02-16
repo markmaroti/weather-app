@@ -11,6 +11,7 @@ import {
   initLocation,
   mapIconByResponse,
   mapWeatherByResponse,
+  mapWeatherDetailByResponse,
   WEATHER_TYPES,
 } from "./app.model";
 
@@ -61,6 +62,7 @@ export class AppComponent {
         wind: getWindStringByIndex[day.wind10m_max],
         icon: mapIconByResponse[day.weather as WEATHER_TYPES],
         weather: mapWeatherByResponse[day.weather as WEATHER_TYPES],
+        weatherHint: mapWeatherDetailByResponse[day.weather as WEATHER_TYPES],
       }))
     ),
     tap(() => this.loading$.next(false))

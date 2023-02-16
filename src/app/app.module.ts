@@ -16,10 +16,23 @@ import { MatDividerModule } from "@angular/material/divider";
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ReactiveFormsModule } from "@angular/forms";
+
+const MATERIAL = [
+  MatProgressSpinnerModule,
+  MatCardModule,
+  MatDividerModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule,
+  MatIconModule,
+  MatTooltipModule,
+];
 
 registerLocaleData(localeHU);
 
@@ -46,13 +59,8 @@ registerLocaleData(localeHU);
       maxAge: 200,
       logOnly: environment.production,
     }),
-    MatProgressSpinnerModule,
-    MatCardModule,
-    MatDividerModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
     ReactiveFormsModule,
+    ...MATERIAL,
   ],
   providers: [{ provide: LOCALE_ID, useValue: "hu-HU" }],
   bootstrap: [AppComponent],

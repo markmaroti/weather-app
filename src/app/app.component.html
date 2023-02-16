@@ -24,7 +24,13 @@
     <mat-card-header>
       <mat-card-title>{{ item.date }}</mat-card-title>
       <mat-card-subtitle>
-        {{ item.weather }} - {{ item.weatherHint }}
+        {{ item.weather }}
+        <mat-icon
+          aria-hidden="false"
+          [matTooltip]="item.weatherHint"
+          aria-label="Weather type tooltip icon"
+          >info</mat-icon
+        >
       </mat-card-subtitle>
     </mat-card-header>
     <img
