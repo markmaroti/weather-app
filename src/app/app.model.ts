@@ -1,3 +1,6 @@
+export const initLatitude = 22.212;
+export const initLongitude = 41.111;
+
 export const getWindStringByIndex = [
   "Below 0.3m/s (calm)",
   "0.3-3.4m/s (light)",

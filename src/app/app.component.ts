@@ -8,7 +8,9 @@ import {
   Coordinates,
   getWindStringByIndex,
   initGeolocationPositionError,
+  initLatitude,
   initLocation,
+  initLongitude,
   mapIconByResponse,
   mapWeatherByResponse,
   mapWeatherDetailByResponse,
@@ -68,8 +70,10 @@ export class AppComponent {
     tap(() => this.loading$.next(false))
   );
 
-  public latitudeControl = new FormControl(22.212, [Validators.required]);
-  public longitudeControl = new FormControl(41.111, [Validators.required]);
+  public latitudeControl = new FormControl(initLatitude, [Validators.required]);
+  public longitudeControl = new FormControl(initLongitude, [
+    Validators.required,
+  ]);
 
   constructor(
     private pageTitle: PageTitleService,
@@ -82,8 +86,12 @@ export class AppComponent {
 
   public setCoords() {
     this.locations$.next({
-      latitude: this.latitudeControl.value,
-      longitude: this.longitudeControl.value,
+      latitude: this.latitudeControl.value
+        ? this.latitudeControl.value
+        : initLatitude,
+      longitude: this.longitudeControl.value
+        ? this.longitudeControl.value
+        : initLongitude,
     });
   }
 
