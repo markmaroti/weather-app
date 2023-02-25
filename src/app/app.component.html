@@ -38,9 +38,9 @@
       [src]="'../assets/svgs/' + item.icon + '.svg'"
       alt="weather icon"
     />
-    <mat-card-content>
-      <span class="temp-min">min: {{ item.temp2m.min }}</span> <br />
-      <span class="temp-max">max: {{ item.temp2m.max }}</span>
+    <mat-card-content class="temp-wrapper">
+      <span class="temp-max">{{ item.temp2m.max }} &#8451;</span>
+      <span class="temp-min">{{ item.temp2m.min }} &#8451;</span>
     </mat-card-content>
     <mat-divider></mat-divider>
     <mat-card-footer>

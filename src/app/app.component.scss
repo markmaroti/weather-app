@@ -39,12 +39,17 @@ a {
     width: 100%;
   }
 
-  .temp-min {
-    color: blue;
-  }
+  .temp-wrapper {
+    display: flex;
+    justify-content: space-evenly;
 
-  .temp-max {
-    color: red;
+    .temp-min {
+      color: blue;
+    }
+
+    .temp-max {
+      color: red;
+    }
   }
 
   .mat-icon {
