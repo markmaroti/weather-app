@@ -22,9 +22,14 @@ export const mapIconByResponse = {
   pcloudy: "cloudy-day-1",
   mcloudy: "cloudy-day-2",
   cloudy: "cloudy-day-3",
-  rain: "rainy-6",
+  humid: "humid",
   lightrain: "rainy-1",
+  oshower: "oshower",
+  ishower: "ishower",
+  lightsnow: "snowy-2",
+  rain: "rainy-6",
   snow: "snowy-1",
+  rainsnow: "rainsnowy",
   ts: "thunder",
   tsrain: "tsrain",
 };
@@ -34,9 +39,14 @@ export const mapWeatherByResponse = {
   pcloudy: "PCloudy",
   mcloudy: "MCloudy",
   cloudy: "Cloudy",
+  humid: "Humid",
   lightrain: "LightRain",
+  oshower: "OShower",
+  ishower: "IShower",
+  lightsnow: "LightSnow",
   rain: "Rainy",
   snow: "Snowy",
+  rainsnow: "RainSnow",
   ts: "Thunder",
   tsrain: "ThunderRain",
 };
@@ -46,10 +56,17 @@ export const mapWeatherDetailByResponse = {
   pcloudy: "Total cloud cover between 20%-60%",
   mcloudy: "Total cloud cover between 60%-80%",
   cloudy: "Total cloud cover over over 80%",
+  humid: "Relative humidity over 90% with total cloud cover less than 60%",
   lightrain:
     "Precipitation rate less than 4mm/hr with total cloud cover more than 80%",
+  oshower:
+    "Precipitation rate less than 4mm/hr with total cloud cover between 60%-80%",
+  ishower:
+    "Precipitation rate less than 4mm/hr with total cloud cover less than 60%",
+  lightsnow: "Precipitation rate less than 4mm/hr",
   rain: "Precipitation rate over 4mm/hr",
   snow: "Precipitation rate over 4mm/hr",
+  rainsnow: "Precipitation type to be ice pellets or freezing rain",
   ts: "Lifted Index less than -5 with precipitation rate below 4mm/hr",
   tsrain: "Lifted Index less than -5 with precipitation rate over 4mm/hr",
 };
@@ -59,11 +76,16 @@ export const WEATHER_TYPES = {
   PCLOUDY: "pcloudy",
   MCLOUDY: "mcloudy",
   CLOUDY: "cloudy",
+  HUMID: "humid",
   RAIN: "rain",
   LIGHTRAIN: "lightrain",
   SNOW: "snow",
   TS: "ts",
   TSRAIN: "tsrain",
+  OSHOWER: "oshower",
+  ISHOWER: "ishower",
+  LIGHTSNOW: "lightsnow",
+  RAINSNOW: "rainsnow",
 } as const;
 export type WEATHER_TYPES = typeof WEATHER_TYPES[keyof typeof WEATHER_TYPES];
 

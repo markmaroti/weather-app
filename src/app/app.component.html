@@ -26,6 +26,7 @@
       <mat-card-subtitle>
         {{ item.weather }}
         <mat-icon
+          *ngIf="item.weatherHint"
           aria-hidden="false"
           [matTooltip]="item.weatherHint"
           aria-label="Weather type tooltip icon"
@@ -34,6 +35,7 @@
       </mat-card-subtitle>
     </mat-card-header>
     <img
+      *ngIf="item.icon"
       class="weather-icon"
       [src]="'../assets/svgs/' + item.icon + '.svg'"
       alt="weather icon"

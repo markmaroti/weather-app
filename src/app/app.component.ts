@@ -63,7 +63,8 @@ export class AppComponent {
           .slice(4, 6)}-${day.date.toString().slice(6, 8)}`,
         wind: getWindStringByIndex[day.wind10m_max],
         icon: mapIconByResponse[day.weather as WEATHER_TYPES],
-        weather: mapWeatherByResponse[day.weather as WEATHER_TYPES],
+        weather:
+          mapWeatherByResponse[day.weather as WEATHER_TYPES] || day.weather,
         weatherHint: mapWeatherDetailByResponse[day.weather as WEATHER_TYPES],
       }))
     ),
