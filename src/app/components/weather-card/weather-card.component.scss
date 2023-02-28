@@ -1,0 +1,42 @@
+@import "app-theme.scss";
+
+.wrapper {
+  display: flex;
+  overflow: auto;
+  width: 100%;
+
+  .card {
+    margin: 10px;
+    min-width: 200px;
+  }
+
+  #clear {
+    width: 150px;
+    height: 150px;
+  }
+
+  .weather-icon {
+    width: 100%;
+  }
+
+  .temp-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+
+    .temp-min {
+      color: blue;
+    }
+
+    .temp-max {
+      color: red;
+    }
+  }
+
+  .mat-icon {
+    vertical-align: middle;
+  }
+
+  .mat-card:hover {
+    box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.2);
+  }
+}

@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <mat-card class="card" *ngFor="let weather of weatherData$ | async">
+    <mat-card-header>
+      <mat-card-title>{{ weather.date }}</mat-card-title>
+      <mat-card-subtitle>
+        {{ weather.weather }}
+        <mat-icon
+          *ngIf="weather.weatherHint"
+          aria-hidden="false"
+          [matTooltip]="weather.weatherHint"
+          aria-label="Weather type tooltip icon"
+          >info</mat-icon
+        >
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img
+      *ngIf="weather.icon"
+      class="weather-icon"
+      [src]="'../assets/svgs/' + weather.icon + '.svg'"
+      alt="weather icon"
+    />
+    <mat-card-content class="temp-wrapper">
+      <span class="temp-max">{{ weather.temp2m.max }} &#8451;</span>
+      <span class="temp-min">{{ weather.temp2m.min }} &#8451;</span>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-footer>
+      {{ weather.wind }}
+    </mat-card-footer>
+  </mat-card>
+</div>

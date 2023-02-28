@@ -22,6 +22,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ReactiveFormsModule } from "@angular/forms";
+import { WeatherCardComponent } from "./components/weather-card/weather-card.component";
 
 const MATERIAL = [
   MatProgressSpinnerModule,
@@ -37,7 +38,7 @@ const MATERIAL = [
 registerLocaleData(localeHU);
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, WeatherCardComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

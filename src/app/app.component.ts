@@ -25,7 +25,6 @@ import {
 })
 export class AppComponent {
   public defaultTitle: string = "weather";
-  public projectsTitle: string = $localize`:@@menuItemProjects:`;
   public apiCall = {
     api: "http://www.7timer.info/bin/api.pl",
     path: "?product=civillight&output=json",
