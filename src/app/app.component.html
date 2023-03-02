@@ -17,6 +17,10 @@
   <button mat-flat-button color="primary" (click)="setCoords()">Send</button>
 </div>
 
-<mat-spinner *ngIf="loading$ | async"></mat-spinner>
-
-<app-weather-card [weatherData$]="parsedData$"></app-weather-card>
+<div class="content-wrapper">
+  <mat-spinner class="spinner" *ngIf="loading$ | async"></mat-spinner>
+  <app-weather-card
+    [ngClass]="{ isLoading: loading$ | async }"
+    [weatherData$]="parsedData$"
+  ></app-weather-card>
+</div>

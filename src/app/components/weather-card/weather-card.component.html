@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="weather-card-wrapper">
   <mat-card class="card" *ngFor="let weather of weatherData$ | async">
     <mat-card-header>
       <mat-card-title>{{ weather.date }}</mat-card-title>
@@ -9,8 +9,9 @@
           aria-hidden="false"
           [matTooltip]="weather.weatherHint"
           aria-label="Weather type tooltip icon"
-          >info</mat-icon
         >
+          info
+        </mat-icon>
       </mat-card-subtitle>
     </mat-card-header>
     <img
