@@ -1,6 +1,7 @@
-# Weather App Project By Mark
+# Weather App Pet Project By Mark
 
 Used API: [7timer.info](https://www.7timer.info/)
+Used SVG icons: [AmCharts](https://www.amcharts.com/free-animated-svg-weather-icons/)
 
 Coding guides:
 
@@ -9,7 +10,7 @@ Coding guides:
 
 # Features
 
-## Angular 13
+## Angular 14
 
 Routing enabled, SCSS selected for stylesheets.  
 Added some static files besides assets: favicons, manifest file.  

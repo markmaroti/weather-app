@@ -17,6 +17,11 @@
   <button mat-flat-button color="primary" (click)="setCoords()">Send</button>
 </div>
 
+<div class="coords-number">
+  <p>Latitude: {{ (locations$ | async)?.latitude }}</p>
+  <p>Longitude: {{ (locations$ | async)?.longitude }}</p>
+</div>
+
 <div class="content-wrapper">
   <mat-spinner class="spinner" *ngIf="loading$ | async"></mat-spinner>
   <app-weather-card
