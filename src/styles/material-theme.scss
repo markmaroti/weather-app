@@ -5,6 +5,7 @@
 @import 'fonts.scss';
 
 @include mat.core();
+@include mat.typography-hierarchy(mat.define-typography-config());
 
 $contrast-black: rgba($black, 0.87);
 $contrast-white: rgba($white, 0.92);
