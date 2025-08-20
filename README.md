@@ -10,7 +10,7 @@ Coding guides:
 
 # Features
 
-## Angular 14
+## Angular 15
 
 Routing enabled, SCSS selected for stylesheets.  
 Added some static files besides assets: favicons, manifest file.  
