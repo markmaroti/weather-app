@@ -18,11 +18,11 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatTooltipModule } from "@angular/material/tooltip";
+import { ReactiveFormsModule } from "@angular/forms";
 
+import { WeatherCardComponent } from "./components/weather-card/weather-card.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { ReactiveFormsModule } from "@angular/forms";
-import { WeatherCardComponent } from "./components/weather-card/weather-card.component";
 
 const MATERIAL = [
   MatProgressSpinnerModule,
@@ -56,7 +56,7 @@ registerLocaleData(localeHU);
     ApiCallerModule,
     PageTitleModule,
     StoreDevtoolsModule.instrument({
-      name: "Angular 13 Bootstrap",
+      name: "Angular 15 Bootstrap",
       maxAge: 200,
       logOnly: environment.production,
     }),
