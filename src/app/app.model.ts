@@ -87,7 +87,7 @@ export const WEATHER_TYPES = {
   LIGHTSNOW: "lightsnow",
   RAINSNOW: "rainsnow",
 } as const;
-export type WEATHER_TYPES = typeof WEATHER_TYPES[keyof typeof WEATHER_TYPES];
+export type WEATHER_TYPES = (typeof WEATHER_TYPES)[keyof typeof WEATHER_TYPES];
 
 export interface Coordinates {
   latitude: number;
@@ -102,7 +102,7 @@ export const initLocation: Coordinates = {
 export const initGeolocationPositionError: GeolocationPositionError = {
   code: 0,
   message: "",
-  PERMISSION_DENIED: 0,
-  POSITION_UNAVAILABLE: 0,
-  TIMEOUT: 0,
+  PERMISSION_DENIED: 1,
+  POSITION_UNAVAILABLE: 2,
+  TIMEOUT: 3,
 };
